@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sample_app/app_themes.dart';
 import 'package:sample_app/theme_manager.dart';
 
@@ -21,10 +23,15 @@ class HomeState extends State<Home> {
         title: Text("Welcome to Flutter App")
       ),
       body: Align(
-        alignment: Alignment.topCenter,
+        alignment: Alignment.center,
         child: Text(
-          'Hello World',
-          )
+          'Know me?',
+           style: TextStyle(
+              color: Colors.grey[800],
+              fontWeight: FontWeight.bold,
+              fontSize: 40
+              )
+        )
       ),
       drawer: Drawer(
         child: ListView(
@@ -38,10 +45,31 @@ class HomeState extends State<Home> {
             ),
             ListTile(
               leading: Icon(
-                Icons.bookmark
+                MdiIcons.postOutline//Icons.bookmark
               ),
-              title: Text("Item 1"),
-              //onTap: 
+              title: Text("Blog"),
+              onTap: () async{
+                const url = 'https://karanrn.wordpress.com';
+                if (await canLaunch(url)) {
+                  await launch(url, forceWebView: true, enableJavaScript: true);
+                }else {
+                  throw 'Could not launch $url';
+                }
+              } 
+            ),
+            ListTile(
+              leading: Icon(
+                MdiIcons.twitter
+              ),
+              title: Text("Tweet me"),
+              onTap: () async{
+                const url = 'https://twitter.com/knadagoudar';
+                if (await canLaunch(url)) {
+                  await launch(url, forceWebView: true, enableJavaScript: true);
+                }else {
+                  throw 'Could not launch $url';
+                }
+              } 
             ),
             Divider(),
             ListTile(
