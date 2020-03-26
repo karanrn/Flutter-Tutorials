@@ -71,6 +71,48 @@ class HomeState extends State<Home> {
                 }
               } 
             ),
+            ListTile(
+              leading: Icon(
+                MdiIcons.instagram
+              ),
+              title: Text("Instagram"),
+              onTap: () async{
+                const url = 'https://www.instagram.com/karan.nadagoudar/';
+                if (await canLaunch(url)) {
+                  await launch(url, forceWebView: true, enableJavaScript: true);
+                }else {
+                  throw 'Could not launch $url';
+                }
+              } 
+            ),
+            ListTile(
+              leading: Icon(
+                MdiIcons.linkedin
+              ),
+              title: Text("LinkedIn"),
+              onTap: () async{
+                const url = 'https://www.linkedin.com/in/knadagoudar/';
+                if (await canLaunch(url)) {
+                  await launch(url, forceWebView: true, enableJavaScript: true);
+                }else {
+                  throw 'Could not launch $url';
+                }
+              } 
+            ),
+            ListTile(
+              leading: Icon(
+                MdiIcons.github
+              ),
+              title: Text("Github"),
+              onTap: () async{
+                const url = 'https://github.com/karanrn';
+                if (await canLaunch(url)) {
+                  await launch(url, forceWebView: true, enableJavaScript: true);
+                }else {
+                  throw 'Could not launch $url';
+                }
+              } 
+            ),
             Divider(),
             ListTile(
               leading: Icon(

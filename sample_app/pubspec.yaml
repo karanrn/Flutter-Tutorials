@@ -1,5 +1,5 @@
 name: sample_app
-description: A new Flutter project.
+description: A sample project to know me.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -11,7 +11,7 @@ description: A new Flutter project.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 1.7.0
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -27,6 +27,12 @@ dependencies:
   shared_preferences: ^0.5.3+4
   url_launcher: ^5.4.2
   material_design_icons_flutter: ^4.0.5045
+  flutter_launcher_icons: ^0.7.4
+
+flutter_icons:
+  image_path: "assests/icon/app_cover.jpg"
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:
